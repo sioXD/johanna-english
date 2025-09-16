@@ -90,6 +90,23 @@
             --token-yellow-50: rgb(255, 255, 255);
         }
 
+        #mobile-menu.hidden {
+        display: block;              /* keep element in DOM */
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-30px);
+        overflow: hidden;
+        transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        /* Visible state */
+        #mobile-menu {
+        max-height: 500px;           /* adjust depending on content */
+        opacity: 1;
+        transform: translateY(0);
+        transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+        }
+
         html {
             --scroll-behavior: smooth!important;
             scroll-behavior: smooth!important;
@@ -100,7 +117,7 @@
             opacity: 0;
             transition: translate 0.8s ease-out, opacity 0.8s ease-out;
         }
-            section *:not(.ignore):not(.ignore *).active {
+        section *:not(.ignore):not(.ignore *).active {
             translate: 0;
             opacity: 1;
         }
@@ -195,12 +212,18 @@
                 </div>
             </nav>
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden lg:hidden flex-col items-center gap-4 p-6 mt-2 backdrop-blur-md bg-black/70">
-                <a href="#features" class="mobile-link text-lg p-2 rounded">Features</a>
-                <a href="#impact" class="mobile-link text-lg p-2 rounded">Impact</a>
-                <a href="#suggestions" class="mobile-link text-lg p-2 rounded">Suggestions</a>
-                <a href="#faq" class="mobile-link text-lg p-2 rounded">FAQ</a>
-                <a href="#contact" class="bg-white text-black font-medium py-3 px-6 rounded-full text-sm mt-2">Get Started</a>
+            <div id="mobile-menu" class="mobile-menu hidden lg:hidden">
+            <div class="flex items-center justify-between backdrop-blur-md bg-black/70 text-white px-6 py-4 rounded-2xl mt-3 mx-6">
+                <!-- Inline Links -->
+                <div class="flex items-center gap-6">
+                <a href="#features" class="mobile-link text-sm hover:text-[var(--token-gray-200)] transition-colors">Features</a>
+                <a href="#impact" class="mobile-link text-sm hover:text-[var(--token-gray-200)] transition-colors">Impact</a>
+                <a href="#suggestions" class="mobile-link text-sm hover:text-[var(--token-gray-200)] transition-colors">Suggestions</a>
+                <a href="#faq" class="mobile-link text-sm hover:text-[var(--token-gray-200)] transition-colors">FAQ</a>
+                </div>
+                <!-- Right Button -->
+                <a href="#contact" class="bg-white text-black font-medium py-2 px-5 rounded-full text-sm hover:bg-[var(--token-gray-200)] transition-colors">Get Started</a>
+            </div>
             </div>
         </header>
 
@@ -261,7 +284,7 @@
                     <!-- Feature Card 3 -->
                     <div class="bg-[var(--token-gray-100)] p-8 rounded-3xl flex flex-col gap-8">
                         <div class="bg-[var(--token-gray-200)] p-4 w-16 h-16 rounded-full flex items-center justify-center">
-                            <i data-lucide="share-2" class="w-8 h-8 text-black"></i>
+                            <i data-lucide="sunrise" class="w-8 h-8 text-black"></i>
                         </div>
                         <div class="flex flex-col gap-4">
                             <h3 class="text-2xl font-medium">Consumer Awareness</h3>
@@ -363,7 +386,7 @@
                     <!-- Suggestion 4 -->
                     <div class="bg-[var(--token-gray-100)] p-8 rounded-3xl flex flex-col gap-6">
                         <div class="bg-[var(--token-gray-200)] p-4 w-16 h-16 rounded-full flex items-center justify-center">
-                            <i data-lucide="sunrise" class="w-8 h-8 text-black"></i>
+                            <i data-lucide="share-2" class="w-8 h-8 text-black"></i>
                         </div>
                         <h3 class="text-2xl font-medium">Share knowledge with your friends</h3>
                         <p class="text-[var(--token-gray-700)]">Inspire others to make conscious choices by spreading awareness and leading by example.</p>
@@ -527,19 +550,19 @@
                         <div>
                             <h4 class="font-bold mb-4">Company</h4>
                             <ul class="space-y-2 text-sm">
-                                <li><a href="#" class="hover:text-black">About Us</a></li>
-                                <li><a href="#" class="hover:text-black">Careers</a></li>
-                                <li><a href="#" class="hover:text-black">Blog</a></li>
-                                <li><a href="#" class="hover:text-black">Contact</a></li>
+                                <li><a href="#features" class="hover:text-black">Features</a></li>
+                                <li><a href="#impact" class="hover:text-black">Impact</a></li>
+                                <li><a href="#suggestions" class="hover:text-black">Suggestions</a></li>
+                                <li><a href="#contact" class="hover:text-black">Contact</a></li>
                             </ul>
                         </div>
                         <div>
                             <h4 class="font-bold mb-4">Resources</h4>
                             <ul class="space-y-2 text-sm">
-                                <li><a href="#" class="hover:text-black">Help Center</a></li>
+                                <li><a href="#" class="hover:text-black">Blog</a></li>
                                 <li><a href="#" class="hover:text-black">Privacy Policy</a></li>
                                 <li><a href="#" class="hover:text-black">Terms of Service</a></li>
-                                <li><a href="#" class="hover:text-black">Animal Calculator</a></li>
+                                <li><a href="#contact" class="hover:text-black">Become a Partner</a></li>
                             </ul>
                         </div>
                     </div>
@@ -552,7 +575,7 @@
                 </div>
                 <div class="mt-12 pt-8 border-t border-[var(--token-gray-200)] text-center text-sm text-[var(--token-gray-500)]">
                     <p>&copy; 2026 BetterJohanna. All rights reserved.</p>
-                    <p>Built by <a href="https://simonziegler.com" class="underline hover:text-black">Simon</a></p>
+                    <p>Built by <a href="https://www.instagram.com/01_simon_10/" class="underline hover:text-black">Simon</a></p>
                 </div>
             </div>
         </footer>
@@ -625,21 +648,19 @@
 
         // Ladeanimation
         function reveal() {
-        let items = document.querySelectorAll("section *:not(.ignore):not(.ignore *)");
+            let items = document.querySelectorAll("section *:not(.ignore):not(.ignore *)");
 
-        items.forEach((item) => {
-            if (item.getBoundingClientRect().top < window.innerHeight) {
-            // Um den Effekt zu verzögern,
-            item.classList.add("active"); // einfach window.innerHeight - x
-            // Entkommentieren um Elemente wieder auszublenden, wenn sie nicht mehr im Viewport sind
-            // } else {
-            // 	item.classList.remove("active");
-            }
-        });
+            items.forEach((item) => {
+                if (item.getBoundingClientRect().top < window.innerHeight) {
+                // Um den Effekt zu verzögern,
+                item.classList.add("active"); // einfach window.innerHeight - x
+                // Entkommentieren um Elemente wieder auszublenden, wenn sie nicht mehr im Viewport sind
+                // } else {
+                // 	item.classList.remove("active");
+                }
+            });
         }
-
         reveal(); // Initialer call
-
         window.addEventListener("scroll", reveal);
 
     </script>

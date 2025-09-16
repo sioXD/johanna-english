@@ -1,5 +1,3 @@
 # TODO
 
-- navbar mobile
-- footer
-- icon changes
+- scroll to top button
