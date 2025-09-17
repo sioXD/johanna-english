@@ -91,20 +91,20 @@
         }
 
         #mobile-menu.hidden {
-        display: block;              /* keep element in DOM */
-        max-height: 0;
-        opacity: 0;
-        transform: translateY(-30px);
-        overflow: hidden;
-        transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+            display: block;              /* keep element in DOM */
+            max-height: 0;
+            opacity: 0;
+            transform: translateY(-30px);
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
         }
 
         /* Visible state */
         #mobile-menu {
-        max-height: 500px;           /* adjust depending on content */
-        opacity: 1;
-        transform: translateY(0);
-        transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+            max-height: 500px;           /* adjust depending on content */
+            opacity: 1;
+            transform: translateY(0);
+            transition: max-height 0.4s ease, opacity 0.2s ease, transform 0.6s ease;
         }
 
         html {
@@ -213,16 +213,27 @@
             </nav>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="mobile-menu hidden lg:hidden">
-            <div class="flex items-center justify-between backdrop-blur-md bg-black/70 text-white px-6 py-4 rounded-2xl mt-3 mx-6">
+            <div class="backdrop-blur-md bg-black/70 text-white px-6 py-4 rounded-2xl mt-3 mx-6 flex flex-col gap-4">
+                
                 <!-- Inline Links -->
-                <div class="flex items-center gap-6">
-                <a href="#features" class="mobile-link text-sm hover:text-[var(--token-gray-200)] transition-colors">Features</a>
-                <a href="#impact" class="mobile-link text-sm hover:text-[var(--token-gray-200)] transition-colors">Impact</a>
-                <a href="#suggestions" class="mobile-link text-sm hover:text-[var(--token-gray-200)] transition-colors">Suggestions</a>
-                <a href="#faq" class="mobile-link text-sm hover:text-[var(--token-gray-200)] transition-colors">FAQ</a>
+                <div class="flex flex-row gap-3 justify-evenly">
+                    <div class="flex flex-col justify-evenly align-center gap-3">
+                    <a href="#features" class="mobile-link text-sm hover:text-[var(--token-gray-200)] transition-colors text-center">Features</a>
+                    <a href="#impact" class="mobile-link text-sm hover:text-[var(--token-gray-200)] transition-colors text-center">Impact</a>
+                    </div>
+                    <div class="flex flex-col justify-evenly align-center gap-3">
+                    <a href="#suggestions" class="mobile-link text-sm hover:text-[var(--token-gray-200)] transition-colors text-center">Suggestions</a>
+                    <a href="#faq" class="mobile-link text-sm hover:text-[var(--token-gray-200)] transition-colors text-center">FAQ</a>
+                    </div>
                 </div>
+
                 <!-- Right Button -->
-                <a href="#contact" class="bg-white text-black font-medium py-2 px-5 rounded-full text-sm hover:bg-[var(--token-gray-200)] transition-colors">Get Started</a>
+                <div class="flex justify-center">
+                    <a href="#contact" class="mobile-link bg-white text-black font-medium py-2 px-5 rounded-full text-sm hover:bg-[var(--token-gray-200)] transition-colors">
+                        Get Started
+                    </a>
+                </div>
+                
             </div>
             </div>
         </header>
@@ -569,7 +580,7 @@
                     <div class="flex items-center gap-4">
                         <a href="#" class="w-6 h-6 text-[var(--token-gray-800)] hover:text-black"><i data-lucide="twitter"></i></a>
                         <a href="#" class="w-6 h-6 text-[var(--token-gray-800)] hover:text-black"><i data-lucide="facebook"></i></a>
-                        <a href="#" class="w-6 h-6 text-[var(--token-gray-800)] hover:text-black"><i data-lucide="instagram"></i></a>
+                        <a href="https://www.instagram.com/joana._.zglr" class="w-6 h-6 text-[var(--token-gray-800)] hover:text-black"><i data-lucide="instagram"></i></a>
                         <a href="#" class="w-6 h-6 text-[var(--token-gray-800)] hover:text-black"><i data-lucide="linkedin"></i></a>
                     </div>
                 </div>
